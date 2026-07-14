@@ -1,0 +1,38 @@
+type LearningNote {
+    id: ID!
+    technologyId: ID!
+    title: String!
+    summary: String
+    content: String!
+    difficulty: Difficulty!
+    status: NoteStatus!
+}
+
+input CreateLearningNoteInput {
+    technologyId: ID!
+    title: String!
+    summary: String
+    content: String!
+    difficulty: Difficulty!
+}
+
+enum Difficulty {
+    JUNIOR
+    MID
+    SENIOR
+}
+
+enum NoteStatus {
+    DRAFT
+    PUBLISHED
+    ARCHIVED
+}
+
+type Query {
+    learningNote(id: ID!): LearningNote
+    learningNotes: [LearningNote!]!
+}
+
+type Mutation {
+    createLearningNote(input: CreateLearningNoteInput!): LearningNote!
+}
