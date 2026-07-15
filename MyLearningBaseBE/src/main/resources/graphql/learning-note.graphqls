@@ -5,7 +5,6 @@ type LearningNote {
     summary: String
     content: String!
     difficulty: Difficulty!
-    status: NoteStatus!
 }
 
 input CreateLearningNoteInput {
@@ -20,12 +19,6 @@ enum Difficulty {
     JUNIOR
     MID
     SENIOR
-}
-
-enum NoteStatus {
-    DRAFT
-    PUBLISHED
-    ARCHIVED
 }
 
 type Query {

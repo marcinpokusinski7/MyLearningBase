@@ -5,7 +5,7 @@ plugins {
     kotlin("plugin.spring") version "2.3.21"
     id("org.springframework.boot") version "4.1.0"
     id("io.spring.dependency-management") version "1.1.7"
-    id("io.swagger.core.v3.swagger-gradle-plugin") version "2.2.52"
+    kotlin("plugin.jpa") version "2.3.21"
 }
 
 group = "com.ti"
@@ -23,8 +23,6 @@ repositories {
 }
 
 dependencies {
-    implementation("org.springframework.boot:spring-boot-starter-data-mongodb")
-    implementation("org.springframework.boot:spring-boot-starter-mongodb")
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-graphql")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
@@ -32,12 +30,11 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.flywaydb:flyway-core")
     implementation("org.flywaydb:flyway-database-postgresql")
-    testImplementation("org.springframework.boot:spring-boot-starter-data-mongodb-test")
-    testImplementation("org.springframework.boot:spring-boot-starter-mongodb-test")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     runtimeOnly("org.postgresql:postgresql")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    testImplementation(kotlin("test"))
 }
 
 kotlin {
